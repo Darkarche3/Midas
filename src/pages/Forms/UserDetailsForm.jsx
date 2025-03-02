@@ -9,13 +9,16 @@ const UserDetailsForm = () => {
   const [income, setIncome] = useState(0);
   const [numChildren, setNumChildren] = useState(0);
   const [numFamilyMembers, setNumFamilyMembers] = useState(1);
-  const [debt, setDebt] = useState(0); 
+  const [debt, setDebt] = useState(0);
+  const [prediction, setPrediction] = useState(null);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle input data here
-    console.log('Input Data:', {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Collect form data
+    const formData = {
       gender,
       location,
       numVehicles,
@@ -23,10 +26,30 @@ const UserDetailsForm = () => {
       numChildren,
       numFamilyMembers,
       debt
-    });
+    };
 
-    // Navigate to the home page after input data is accepted
-    navigate('/home');
+    try {
+      const response = await fetch('http://localhost:5001/predict', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      
+      if (data.error) {
+        setError(data.error);
+        setPrediction(null);
+      } else {
+        setPrediction(data.prediction);
+        setError(null);
+      }
+    } catch (error) {
+      setError('Error occurred while making the prediction');
+      setPrediction(null);
+    }
   };
 
   return (
@@ -49,7 +72,7 @@ const UserDetailsForm = () => {
           </select>
         </div>
         <div className="form-group">
-        <label htmlFor="numVehicles">Numer of Vehicles:</label>
+          <label htmlFor="numVehicles">Number of Vehicles:</label>
           <input
             type="number"
             id="numVehicles"
@@ -102,6 +125,19 @@ const UserDetailsForm = () => {
         </div>
         <button type="submit">Submit</button>
       </form>
+
+      {prediction && (
+        <div className="prediction-result">
+          <h3>Prediction Result:</h3>
+          <p>{prediction}</p>
+        </div>
+      )}
+
+      {error && (
+        <div className="error-message">
+          <p>{error}</p>
+        </div>
+      )}
     </div>
   );
 };

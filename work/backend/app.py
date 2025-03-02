@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request, jsonify
 from flask_cors import CORS  # Import CORS
 import pickle
 import pandas as pd
@@ -12,7 +12,7 @@ CORS(app)  # Enable CORS for all routes
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return 'Flask Backend Running'
 
 @app.route('/predict', methods=['POST'])
 def predict():
