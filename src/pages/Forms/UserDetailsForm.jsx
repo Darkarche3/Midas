@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { PrecisionContext } from '../../Contexts/PrecisionContext.jsx'; // Import the context
 import './UserDetailsForm.scss';
+import { db, auth } from '../../config/firebase.js'; // Import Firestore and Auth
+import { doc, updateDoc } from 'firebase/firestore'; // Import Firestore functions
 
 const UserDetailsForm = () => {
   const [gender, setGender] = useState('Male');
@@ -13,6 +16,7 @@ const UserDetailsForm = () => {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const { setAmountLocked } = useContext(PrecisionContext); // Use the context
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,6 +49,18 @@ const UserDetailsForm = () => {
         setPrediction(null);
       } else {
         setPrediction(data.prediction);
+        setAmountLocked(data.prediction); // Set the amountLocked value
+
+        const user = auth.currentUser;
+        if (user) {
+          // Update the user's document in Firestore
+          const userDoc = doc(db, 'users', user.uid);
+          await updateDoc(userDoc, {
+            prediction: data.prediction,
+            timestamp: new Date()
+          });
+        }
+
         setError(null);
       }
     } catch (error) {

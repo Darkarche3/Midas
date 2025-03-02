@@ -1,10 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { PrecisionContext } from '../../Contexts/PrecisionContext'; // Import the context
+import { db, auth } from '../../config/firebase.js'; // Import Firestore and Auth
+import { doc, getDoc } from 'firebase/firestore'; // Import Firestore functions
+import { onAuthStateChanged } from 'firebase/auth'; // Import onAuthStateChanged
 import "./homePage.scss";
 
 const HomePage = () => {
+  const { amountLocked, setAmountLocked } = useContext(PrecisionContext); // Use the context
   const [progress] = useState(50); // Example initial value
 
   useEffect(() => {
+    const fetchAmountLocked = async (user) => {
+      if (user) {
+        const userDoc = doc(db, 'users', user.uid);
+        const docSnap = await getDoc(userDoc);
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          if (userData.prediction) {
+            setAmountLocked(userData.prediction);
+          }
+        }
+      }
+    };
+
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        fetchAmountLocked(user);
+      }
+    });
+
     const progressBar = document.querySelector(".app-progress-bar");
     if (progress >= 75) {
       progressBar.className = "app-progress-bar green";
@@ -13,7 +37,9 @@ const HomePage = () => {
     } else {
       progressBar.className = "app-progress-bar red";
     }
-  }, [progress]);
+
+    return () => unsubscribe(); // Cleanup the observer on unmount
+  }, [progress, setAmountLocked]);
 
   return (
     <div className="app-container">
@@ -28,7 +54,7 @@ const HomePage = () => {
           ></div>
         </div>
       </div>
-      <p className="app-lock-status">{"Amount Locked: $0"}</p>
+      <p className="app-lock-status">{`Amount Locked: $${amountLocked}`}</p>
       <div className="app-activity-button">ACTIVITY</div>
       <div className="app-table-container">
         <div className="app-table-header">
