@@ -13,7 +13,7 @@ with open("model.pkl", "rb") as f:
 DB_URL = "postgresql://username:password@your-db-host:5432/your-db-name"
 engine = create_engine(DB_URL)
 
-# Create Table
+# Create Table (if not exists)
 with engine.connect() as conn:
     conn.execute(text("""
         CREATE TABLE IF NOT EXISTS users (
@@ -31,6 +31,7 @@ def predict():
     input_data = np.array([[len(data["username"]), len(data["email"]), len(data["password"])]])
     prediction = model.predict(input_data)[0]
 
+    # Store user data and prediction in the database
     with engine.connect() as conn:
         conn.execute(text("""
             INSERT INTO users (username, email, password, prediction) 
@@ -44,5 +45,6 @@ def predict():
 
     return jsonify({"prediction": prediction})
 
+# Start the Flask app
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)  # Render will use port 5000
