@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { PrecisionContext } from '../../Contexts/PrecisionContext'; // Import the context
 import { db, auth } from '../../config/firebase.js'; // Import Firestore and Auth
-import { collection,doc, getDocs } from 'firebase/firestore'; // Import Firestore functions
+import { collection,doc, getDoc, getDocs } from 'firebase/firestore'; // Import Firestore functions
 import { onAuthStateChanged } from 'firebase/auth'; // Import onAuthStateChanged
 import "./homePage.scss";
 
@@ -59,7 +59,7 @@ const HomePage = () => {
     const fetchAmountLocked = async (user) => {
       if (user) {
         const userDoc = doc(db, 'users', user.uid);
-        const docSnap = await getDocs(userDoc);
+        const docSnap = await getDoc(userDoc);
         if (docSnap.exists()) {
           const userData = docSnap.data();
           if (userData.prediction) {
