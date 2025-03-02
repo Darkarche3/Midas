@@ -1,0 +1,301 @@
+Income,Gender,Location,No_of_Children,No_of_Family_Members,Has_Car,Amount_Locked_Away
+151958,Male,Texas,4,2,Yes,32391.6
+176867,Male,Pennsylvania,3,3,Yes,46216.75
+161932,Other,Texas,5,6,No,64772.8
+133694,Other,Illinois,1,2,No,26738.8
+149879,Male,Illinois,3,4,No,44963.7
+140268,Male,Ohio,3,1,Yes,23040.2
+84886,Female,New York,2,7,Yes,40198.7
+167337,Male,Georgia,3,7,Yes,77301.65
+198266,Female,California,5,4,No,59479.8
+117498,Male,Ohio,5,8,Yes,60749.0
+142727,Female,Florida,0,2,No,28545.4
+156324,Other,California,5,7,No,70345.8
+46023,Male,Michigan,5,5,Yes,18108.05
+71090,Male,North Carolina,2,8,Yes,37545.0
+97221,Male,Florida,5,1,No,14583.15
+94820,Male,Florida,0,1,Yes,16223.0
+30769,Female,Ohio,1,7,No,13846.05
+89735,Male,New York,2,3,Yes,24433.75
+94925,Other,Ohio,1,8,Yes,49462.5
+35311,Other,Michigan,2,7,No,15889.95
+133355,Male,Pennsylvania,4,3,Yes,35338.75
+115305,Other,Pennsylvania,3,7,No,51887.25
+189765,Male,New York,4,5,Yes,68417.75
+160608,Male,Michigan,5,8,No,80304.0
+186730,Other,New York,1,6,No,74692.0
+114478,Male,Texas,5,1,Yes,19171.7
+152537,Other,Pennsylvania,3,7,No,68641.65
+179503,Female,Florida,2,5,Yes,64826.05
+160523,Male,Georgia,3,3,Yes,42130.75
+32747,Female,North Carolina,0,3,Yes,10186.75
+153855,Other,Michigan,3,1,No,23078.25
+95725,Female,California,0,4,No,28717.5
+159981,Female,New York,3,7,Yes,73991.45
+114654,Other,North Carolina,0,8,Yes,59327.0
+196845,Female,California,1,2,No,39369.0
+149346,Female,North Carolina,5,3,Yes,39336.5
+97435,Other,Georgia,5,8,Yes,50717.5
+86886,Female,California,4,8,No,43443.0
+96803,Other,Ohio,5,6,Yes,40721.2
+61551,Female,Illinois,2,8,No,30775.5
+146216,Other,Ohio,3,8,Yes,75108.0
+41394,Other,Pennsylvania,4,6,No,16557.6
+99092,Female,Illinois,2,3,Yes,26773.0
+33890,Female,Ohio,2,8,Yes,18945.0
+71606,Female,Illinois,0,4,No,21481.8
+117313,Male,Illinois,5,4,Yes,37193.9
+171699,Male,Florida,1,5,No,60094.65
+38792,Male,New York,1,6,Yes,17516.8
+184969,Other,New York,4,5,No,64739.15
+98148,Female,Florida,1,6,No,39259.2
+154243,Other,North Carolina,3,7,No,69409.35
+150174,Male,Texas,1,7,No,67578.3
+184555,Female,North Carolina,4,8,Yes,94277.5
+154358,Other,California,1,2,Yes,32871.6
+78555,Female,California,3,7,No,35349.75
+47159,Other,Illinois,0,2,No,9431.8
+140510,Female,Ohio,4,7,No,63229.5
+136530,Male,Ohio,0,1,Yes,22479.5
+110077,Male,New York,0,7,Yes,51534.65
+65920,Female,Michigan,0,5,Yes,25072.0
+49457,Other,North Carolina,2,3,Yes,14364.25
+108953,Male,Pennsylvania,5,8,No,54476.5
+82995,Male,Georgia,2,5,No,29048.25
+39692,Male,Ohio,5,3,No,9923.0
+67065,Female,Georgia,0,4,Yes,22119.5
+129299,Female,Illinois,4,5,Yes,47254.65
+193678,Other,Georgia,5,4,Yes,60103.4
+41534,Other,Pennsylvania,3,2,No,8306.8
+70397,Other,Florida,3,2,No,14079.4
+121387,Female,Pennsylvania,1,1,Yes,20208.05
+31016,Female,Georgia,5,7,No,13957.2
+85591,Other,Pennsylvania,4,5,Yes,31956.85
+53247,Other,Texas,2,4,Yes,17974.1
+54300,Female,Illinois,0,3,No,13575.0
+112798,Other,North Carolina,1,2,Yes,24559.6
+39268,Male,Florida,3,7,No,17670.6
+116807,Female,Ohio,2,2,Yes,25361.4
+42185,Other,California,2,3,No,10546.25
+169643,Female,North Carolina,0,7,No,76339.35
+68044,Male,California,5,7,No,30619.8
+81214,Female,Illinois,3,4,Yes,26364.2
+144752,Female,Florida,4,4,Yes,45425.6
+78984,Female,New York,2,5,No,27644.4
+70774,Female,Ohio,0,5,No,24770.9
+32568,Male,Texas,4,6,Yes,15027.2
+150151,Female,New York,5,8,Yes,77075.5
+163767,Female,Illinois,3,6,Yes,67506.8
+154375,Other,North Carolina,5,1,No,23156.25
+166330,Female,Texas,2,2,Yes,35266.0
+69504,Other,Pennsylvania,4,5,Yes,26326.4
+194231,Male,Georgia,4,4,No,58269.3
+43986,Male,Texas,4,3,Yes,12996.5
+91858,Male,Illinois,2,4,Yes,29557.4
+159312,Male,Michigan,2,2,Yes,33862.4
+42666,Other,Georgia,5,6,No,17066.4
+68660,Female,California,1,4,No,20598.0
+164633,Male,Ohio,5,8,No,82316.5
+56854,Female,California,3,1,No,8528.1
+94505,Other,Texas,0,2,No,18901.0
+134488,Other,California,4,6,No,53795.2
+52662,Other,Illinois,1,8,No,26331.0
+38392,Male,Pennsylvania,0,3,Yes,11598.0
+60535,Female,North Carolina,1,6,Yes,26214.0
+143569,Female,Ohio,5,7,No,64606.05
+82256,Female,California,2,8,Yes,43128.0
+119135,Other,California,4,8,Yes,61567.5
+157478,Male,Texas,5,1,No,23621.7
+65222,Other,North Carolina,0,2,Yes,15044.4
+107373,Other,New York,0,3,Yes,28843.25
+153684,Female,California,0,1,Yes,25052.6
+40965,Other,Illinois,0,6,Yes,18386.0
+54538,Female,Michigan,0,1,Yes,10180.7
+138066,Male,Ohio,1,8,No,69033.0
+143252,Female,California,5,2,No,28650.4
+169182,Male,Illinois,4,5,No,59213.7
+188338,Female,Illinois,2,1,Yes,30250.7
+128806,Other,Ohio,2,7,No,57962.7
+167982,Other,New York,5,1,Yes,27197.3
+140989,Male,Illinois,5,6,Yes,58395.6
+120982,Male,Michigan,2,6,Yes,50392.8
+151626,Male,Illinois,2,3,Yes,39906.5
+149176,Female,Illinois,1,6,No,59670.4
+161278,Female,Illinois,3,4,No,48383.4
+152409,Male,Pennsylvania,4,2,Yes,32481.8
+53419,Other,Pennsylvania,0,2,No,10683.8
+80015,Female,New York,3,5,Yes,30005.25
+152096,Female,California,5,5,No,53233.6
+137059,Female,Illinois,2,2,No,27411.8
+140687,Male,North Carolina,3,7,Yes,65309.15
+117939,Male,California,4,5,No,41278.65
+179213,Male,New York,5,3,Yes,46803.25
+135878,Male,Florida,0,6,No,54351.2
+194899,Male,California,0,2,Yes,40979.8
+92623,Other,California,4,8,Yes,48311.5
+105450,Other,Georgia,4,5,No,36907.5
+123426,Male,Texas,2,2,No,24685.2
+147845,Female,Georgia,0,4,Yes,46353.5
+183371,Male,Michigan,5,1,No,27505.65
+73585,Other,Pennsylvania,3,6,No,29434.0
+139225,Other,Pennsylvania,5,2,Yes,29845.0
+94044,Female,Texas,1,1,Yes,16106.6
+139556,Other,Ohio,1,5,No,48844.6
+32693,Male,Ohio,4,1,Yes,6903.95
+125259,Female,New York,2,6,Yes,52103.6
+55939,Male,Texas,1,2,Yes,13187.8
+182906,Male,California,0,4,No,54871.8
+48047,Female,Ohio,5,7,No,21621.15
+56105,Male,Illinois,5,5,Yes,21636.75
+105766,Other,North Carolina,4,2,No,21153.2
+176779,Male,California,3,6,Yes,72711.6
+183048,Female,Michigan,4,5,No,64066.8
+74262,Female,Illinois,3,3,Yes,20565.5
+155117,Female,Illinois,4,1,Yes,25267.55
+53776,Male,Texas,4,7,No,24199.2
+191152,Female,New York,4,6,Yes,78460.8
+158376,Female,Michigan,3,3,No,39594.0
+167848,Male,Ohio,3,8,No,83924.0
+122787,Other,Texas,4,2,Yes,26557.4
+157948,Male,Ohio,1,4,Yes,49384.4
+85016,Female,Texas,2,5,No,29755.6
+170546,Female,Texas,2,1,Yes,27581.9
+51959,Male,Texas,2,5,Yes,20185.65
+166602,Other,New York,3,7,Yes,76970.9
+149101,Female,Texas,3,2,Yes,31820.2
+33748,Female,Florida,1,5,Yes,13811.8
+43545,Female,North Carolina,2,1,No,6531.75
+157659,Male,Ohio,2,2,No,31531.8
+195838,Female,California,4,5,Yes,70543.3
+103530,Other,Georgia,3,4,Yes,33059.0
+123557,Female,Michigan,2,6,Yes,51422.8
+91087,Female,Pennsylvania,5,2,No,18217.4
+98840,Other,New York,1,6,Yes,41536.0
+148451,Female,California,5,8,No,74225.5
+81005,Male,Illinois,5,2,No,16201.0
+69353,Male,Florida,1,4,No,20805.9
+82733,Male,Pennsylvania,5,6,Yes,35093.2
+95318,Other,Georgia,2,3,No,23829.5
+184736,Female,California,3,1,Yes,29710.4
+97172,Male,Pennsylvania,1,3,No,24293.0
+123264,Other,California,4,5,Yes,45142.4
+56736,Female,Florida,5,4,No,17020.8
+142859,Other,Georgia,1,3,Yes,37714.75
+142181,Male,Illinois,0,2,No,28436.2
+161926,Male,Texas,0,5,Yes,58674.1
+120084,Male,Ohio,3,5,Yes,44029.4
+199695,Other,Illinois,2,3,Yes,51923.75
+37392,Other,Texas,3,8,Yes,20696.0
+85680,Male,New York,3,3,No,21420.0
+80859,Other,North Carolina,3,8,No,40429.5
+155657,Male,Michigan,3,4,Yes,48697.1
+187381,Male,Michigan,4,1,No,28107.15
+100467,Female,Ohio,4,3,Yes,27116.75
+128506,Other,Georgia,1,7,Yes,59827.7
+139751,Male,Florida,0,8,No,69875.5
+148906,Male,Georgia,3,3,Yes,39226.5
+173760,Other,Florida,1,6,Yes,71504.0
+55342,Female,Georgia,0,2,No,11068.4
+198229,Female,North Carolina,5,7,Yes,91203.05
+136308,Male,New York,2,7,Yes,63338.6
+136081,Other,New York,4,8,Yes,70040.5
+119045,Female,Texas,5,6,Yes,49618.0
+64698,Other,Pennsylvania,0,6,No,25879.2
+140078,Other,New York,5,5,No,49027.3
+110623,Male,New York,2,8,No,55311.5
+52671,Female,Illinois,0,1,Yes,9900.65
+186256,Male,Illinois,5,2,Yes,39251.2
+123384,Female,Texas,4,4,No,37015.2
+116202,Female,Pennsylvania,4,7,Yes,54290.9
+81663,Female,Ohio,1,4,Yes,26498.9
+45708,Female,Illinois,5,3,Yes,13427.0
+121906,Female,Ohio,3,3,Yes,32476.5
+79811,Other,California,5,4,No,23943.3
+163883,Male,Illinois,0,3,No,40970.75
+86250,Other,North Carolina,0,1,No,12937.5
+142547,Female,Pennsylvania,5,6,Yes,59018.8
+154249,Male,Texas,2,3,No,38562.25
+64754,Female,California,4,5,No,22663.9
+172483,Male,Pennsylvania,0,3,Yes,45120.75
+163983,Other,North Carolina,4,2,Yes,34796.6
+169752,Male,Pennsylvania,0,1,No,25462.8
+114896,Male,North Carolina,1,2,No,22979.2
+101295,Male,North Carolina,3,2,No,20259.0
+130689,Male,Ohio,0,5,No,45741.15
+41111,Male,Georgia,4,1,Yes,8166.65
+67504,Female,California,1,1,No,10125.6
+162874,Male,Pennsylvania,0,8,No,81437.0
+38155,Male,Florida,2,1,Yes,7723.25
+69384,Other,California,3,1,No,10407.6
+142561,Male,Georgia,0,1,Yes,23384.15
+77254,Other,California,1,5,Yes,29038.9
+51918,Female,New York,2,3,Yes,14979.5
+115981,Male,Florida,5,8,No,57990.5
+60306,Other,Georgia,1,2,No,12061.2
+177718,Other,Ohio,1,1,Yes,28657.7
+76843,Female,Pennsylvania,2,7,No,34579.35
+150975,Male,Michigan,1,3,No,37743.75
+126601,Male,Georgia,2,3,Yes,33650.25
+137512,Other,Texas,0,2,Yes,29502.4
+177443,Male,Pennsylvania,2,5,No,62105.05
+141472,Other,Georgia,2,4,Yes,44441.6
+163121,Male,New York,3,4,No,48936.3
+192688,Other,Michigan,2,3,No,48172.0
+133727,Male,New York,2,6,No,53490.8
+142893,Female,Michigan,5,6,No,57157.2
+50932,Male,Texas,0,2,Yes,12186.4
+147796,Male,Pennsylvania,3,4,Yes,46338.8
+59855,Female,Ohio,5,3,Yes,16963.75
+37400,Male,New York,4,5,Yes,15090.0
+147858,Female,New York,0,4,No,44357.4
+45151,Male,North Carolina,0,3,No,11287.75
+96690,Other,Michigan,4,3,Yes,26172.5
+34499,Other,Illinois,2,1,No,5174.85
+36295,Male,Pennsylvania,5,5,No,12703.25
+150885,Male,Michigan,1,1,No,22632.75
+156071,Male,North Carolina,3,2,Yes,33214.2
+89040,Other,California,1,1,Yes,15356.0
+42183,Male,Michigan,4,7,Yes,20982.35
+190371,Other,Ohio,0,1,No,28555.65
+173946,Female,Pennsylvania,0,7,Yes,80275.7
+146336,Other,North Carolina,3,4,Yes,45900.8
+62711,Other,California,0,6,Yes,27084.4
+35539,Female,Florida,0,8,Yes,19769.5
+156063,Other,North Carolina,3,8,Yes,80031.5
+163629,Male,Florida,5,3,Yes,42907.25
+68360,Male,Pennsylvania,5,8,No,34180.0
+163272,Other,New York,3,7,No,73472.4
+51357,Male,North Carolina,4,5,Yes,19974.95
+149121,Other,Texas,0,1,Yes,24368.15
+107505,Male,Florida,0,7,No,48377.25
+32869,Male,Ohio,4,5,No,11504.15
+80108,Other,Texas,5,6,Yes,34043.2
+142296,Male,Georgia,2,8,Yes,73148.0
+124179,Other,Georgia,2,6,Yes,51671.6
+120272,Male,California,2,8,Yes,62136.0
+68467,Male,New York,5,1,No,10270.05
+53328,Female,Pennsylvania,5,2,Yes,12665.6
+121412,Female,North Carolina,4,1,Yes,20211.8
+165059,Other,Illinois,0,4,Yes,51517.7
+88871,Female,Ohio,4,7,Yes,41991.95
+183471,Other,Florida,4,3,No,45867.75
+158391,Female,Pennsylvania,5,2,No,31678.2
+116416,Male,Texas,2,1,No,17462.4
+100271,Other,Georgia,1,5,Yes,37094.85
+74064,Other,Ohio,0,2,Yes,16812.8
+137450,Male,Illinois,5,7,No,61852.5
+49830,Other,North Carolina,2,8,Yes,26915.0
+178501,Other,California,1,2,Yes,37700.2
+167965,Female,Illinois,1,8,No,83982.5
+146381,Other,Ohio,5,7,No,65871.45
+77333,Male,Illinois,3,1,No,11599.95
+164508,Female,Ohio,0,7,No,74028.6
+106213,Female,Ohio,1,2,Yes,23242.6
+166967,Male,Michigan,5,5,Yes,60438.45
+180810,Male,Florida,5,6,No,72324.0
+60746,Female,Georgia,2,2,Yes,14149.2
+79377,Other,Michigan,3,7,No,35719.65
+84045,Female,North Carolina,0,6,No,33618.0
+127888,Male,Michigan,4,7,Yes,59549.6
+137455,Female,New York,2,5,No,48109.25
+166672,Male,New York,1,7,Yes,77002.4
