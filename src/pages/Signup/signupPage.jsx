@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { auth, createUserWithEmailAndPassword, db, doc, setDoc } from "../../config/firebase.js";
 import "./signupPage.scss";
 
 const Signup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
     username: "",
     email: "",
     password: "",
@@ -18,11 +21,26 @@ const Signup = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
-    navigate("/home");
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
+      const user = userCredential.user;
+
+      // Store additional user information in Firestore
+      await setDoc(doc(db, "users", user.uid), {
+        firstname: formData.firstname,
+        lastname: formData.lastname,
+        username: formData.username,
+        email: formData.email,
+        password: formData.password,
+      });
+
+      console.log("User registered and data stored:", formData);
+      navigate("/home");
+    } catch (error) {
+      console.error("Error registering user:", error);
+    }
   };
 
   return (
@@ -30,7 +48,7 @@ const Signup = () => {
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2>Sign Up</h2>
         <div className="form-group">
-          <label htmlFor="username">First Name</label>
+          <label htmlFor="firstname">First Name</label>
           <input
             type="text"
             id="firstname"
@@ -41,7 +59,7 @@ const Signup = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="lastname">Last name</label>
+          <label htmlFor="lastname">Last Name</label>
           <input
             type="text"
             id="lastname"

@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { auth, signInWithEmailAndPassword } from '../../config/firebase';
 import './loginPage.scss';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Handle login logic here
-    console.log('Username:', username);
-    console.log('Password:', password);
-
-    // Navigate to the home page after successful login
-    navigate('/home');
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log('User logged in:', userCredential.user);
+      navigate('/home');
+    } catch (error) {
+      console.error('Error logging in:', error);
+    }
   };
 
   return (
@@ -23,12 +24,12 @@ const Login = () => {
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="email">Email:</label>
           <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -36,7 +37,7 @@ const Login = () => {
           <label htmlFor="password">Password:</label>
           <input
             type="password"
-            id="password}"
+            id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
