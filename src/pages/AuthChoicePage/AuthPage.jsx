@@ -7,11 +7,18 @@ import './AuthPage.scss';
 const AuthPage = () => {
   return (
     <div className="auth-page-container">
-      <h1>Welcome to Midas</h1>
-      <p className="subline">Turn your fortunes around with a touch</p>
+      <h1>MIDAS</h1>
+      <p className="welcome">WELCOME! <span role="img" aria-label="wave">👋</span></p>
+      <p className="subline">Please select an option below to proceed:</p>
       <div className="auth-options">
-        <Link to="/login" className="auth-link">Login</Link>
-        <Link to="/signup" className="auth-link">Sign Up</Link>
+        <div className="button-group">
+          <h2>New users:</h2>
+          <Link to="/signup" className="auth-link">SIGN UP</Link>
+        </div>
+        <div className="button-group">
+          <h2>Returning users:</h2>
+          <Link to="/login" className="auth-link">LOG IN</Link>
+        </div>
       </div>
       <Routes>
         <Route path="/login" element={<Login />} />

@@ -38,6 +38,7 @@ const UserDetailsForm = () => {
       });
 
       const data = await response.json();
+      //console.log(data);
       
       if (data.error) {
         setError(data.error);
@@ -50,6 +51,7 @@ const UserDetailsForm = () => {
       setError('Error occurred while making the prediction');
       setPrediction(null);
     }
+    navigate('/home');
   };
 
   return (
