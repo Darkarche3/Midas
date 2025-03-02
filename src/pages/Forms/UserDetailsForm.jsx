@@ -42,7 +42,7 @@ const UserDetailsForm = () => {
       });
 
       const data = await response.json();
-      //console.log(data);
+      console.log(data);
       
       if (data.error) {
         setError(data.error);

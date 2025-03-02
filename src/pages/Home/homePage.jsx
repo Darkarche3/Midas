@@ -1,19 +1,65 @@
 import React, { useState, useEffect, useContext } from "react";
 import { PrecisionContext } from '../../Contexts/PrecisionContext'; // Import the context
 import { db, auth } from '../../config/firebase.js'; // Import Firestore and Auth
-import { doc, getDoc } from 'firebase/firestore'; // Import Firestore functions
+import { collection,doc, getDocs } from 'firebase/firestore'; // Import Firestore functions
 import { onAuthStateChanged } from 'firebase/auth'; // Import onAuthStateChanged
 import "./homePage.scss";
 
 const HomePage = () => {
   const { amountLocked, setAmountLocked } = useContext(PrecisionContext); // Use the context
-  const [progress] = useState(50); // Example initial value
+  const [progress, setProgress] = useState(0); // Initialize progress as 0
+  const [transactions, setTransactions] = useState([]); // Store transaction data
+  const [prediction, setPrediction] = useState(0); // Store prediction value from the users collection
 
+
+  // Fetch transactions from Firestore
+  useEffect(() => {
+    const fetchTransactions = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "transactions"));
+        const transactionsData = querySnapshot.docs.map(doc => doc.data());
+        setTransactions(transactionsData);
+      } catch (error) {
+        console.error("Error fetching transactions:", error);
+      }
+    };
+
+    fetchTransactions();
+  }, []); // Empty dependency array means it runs once when the component mounts
+
+  // Fetch the prediction value from the users collection
+  useEffect(() => {
+    const fetchPrediction = async () => {
+      try {
+        const userSnapshot = await getDocs(collection(db, "users"));
+        const userData = userSnapshot.docs.map(doc => doc.data());
+        if (userData.length > 0) {
+          // Assuming we are using the first user's prediction value
+          setPrediction(userData[0].prediction || 0); // Default to 0 if no prediction value
+        }
+      } catch (error) {
+        console.error("Error fetching prediction:", error);
+      }
+    };
+
+    fetchPrediction();
+  }, []); // Empty dependency array means it runs once when the component mounts
+
+  // Calculate the progress based on transactions and prediction value
+  useEffect(() => {
+    const totalAmount = transactions.reduce((sum, transaction) => sum + transaction.amount, 0);
+    if (prediction > 0) {
+      const newProgress = ((prediction - totalAmount) / prediction) * 100; // Calculate progress with (b - a) / b formula
+      setProgress(newProgress); // Set the calculated progress
+    }
+  }, [transactions, prediction]); // Recalculate progress when transactions or prediction changes
+
+  // Update progress bar color based on the progress value
   useEffect(() => {
     const fetchAmountLocked = async (user) => {
       if (user) {
         const userDoc = doc(db, 'users', user.uid);
-        const docSnap = await getDoc(userDoc);
+        const docSnap = await getDocs(userDoc);
         if (docSnap.exists()) {
           const userData = docSnap.data();
           if (userData.prediction) {
@@ -72,30 +118,22 @@ const HomePage = () => {
         <div className="app-table-body">
           <table className="app-table">
             <tbody>
-              <tr>
-                <td>Transaction 1</td>
-                <td>Date 1</td>
-                <td>Amount 1</td>
-                <td>Status 1</td>
-              </tr>
-              <tr>
-                <td>Transaction 2</td>
-                <td>Date 2</td>
-                <td>Amount 2</td>
-                <td>Status 2</td>
-              </tr>
-              <tr>
-                <td>Transaction 3</td>
-                <td>Date 3</td>
-                <td>Amount 3</td>
-                <td>Status 3</td>
-              </tr>
-              <tr>
-                <td>Transaction 4</td>
-                <td>Date 4</td>
-                <td>Amount 4</td>
-                <td>Status 4</td>
-              </tr>
+              {transactions.length === 0 ? (
+                <tr>
+                  <td colSpan="4" style={{ textAlign: "center" }}>
+                    No transactions available
+                  </td>
+                </tr>
+              ) : (
+                transactions.map((transaction, index) => (
+                  <tr key={index}>
+                    <td>{transaction.merchant_name || "N/A"}</td>
+                    <td>{transaction.date || "N/A"}</td>
+                    <td>{transaction.amount || "N/A"}</td>
+                    <td>{transaction.status || "N/A"}</td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>
