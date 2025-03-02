@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './loginPage.scss';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
   
 
   const handleSubmit = (event) => {
@@ -13,6 +15,7 @@ const Login = () => {
     console.log('Password:', password);
 
     // Navigate to the home page after successful login
+    navigate('/home');
   };
 
   return (
