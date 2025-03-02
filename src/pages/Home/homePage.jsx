@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import './homePage.scss';
+import React, { useState, useEffect } from "react";
+import "./homePage.scss";
 
 const HomePage = () => {
   const [progress] = useState(50); // Example initial value
+  
 
   useEffect(() => {
-    const progressBar = document.querySelector('.app-progress-bar');
+    const progressBar = document.querySelector(".app-progress-bar");
     if (progress >= 75) {
-      progressBar.className = 'app-progress-bar green';
+      progressBar.className = "app-progress-bar green";
     } else if (progress >= 25) {
-      progressBar.className = 'app-progress-bar yellow';
+      progressBar.className = "app-progress-bar yellow";
     } else {
-      progressBar.className = 'app-progress-bar red';
+      progressBar.className = "app-progress-bar red";
     }
   }, [progress]);
-
 
   return (
     <div className="app-container">
@@ -23,11 +23,14 @@ const HomePage = () => {
       </div>
       <div className="app-bar-container">
         <div className="app-progress-bar-container">
-          <div className="app-progress-bar" style={{ width: `${progress}%` }}></div>
+          <div
+            className="app-progress-bar"
+            style={{ width: `${progress}%` }}
+          ></div>
         </div>
       </div>
-      <p className="app-lock-status">{'Amount Locked: $0'}</p>
-      <button className="app-activity-button">ACTIVITY</button>
+      <p className="app-lock-status">{"Amount Locked: $0"}</p>
+      <div className="app-activity-button">ACTIVITY</div>
       <div className="app-table-container">
         <div className="app-table-header">
           <table className="app-table">
@@ -72,7 +75,11 @@ const HomePage = () => {
           </table>
         </div>
       </div>
-      <span role="img" aria-label="fire" className="app-fire-bottom">🔥</span>
+      <div className="fire-container">
+        <span role="img" aria-label="fire" className="app-fire-bottom">
+          🔥
+        </span>
+      </div>
     </div>
   );
 };

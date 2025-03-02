@@ -124,10 +124,16 @@ body,
   table-layout: fixed; /* Ensure columns align */
 }
 
+.fire-container {
+  position: relative;
+  display: inline-block;
+}
+
 .app-fire-bottom {
   position: fixed;
-  bottom: 0px; /* Adjust the distance from the bottom as needed */
+  bottom: 0; /* Adjust the distance from the bottom as needed */
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 15em; /* Increase the font size */
-  width: 100%;
   text-align: center; /* Center the emoji horizontally */
 }
