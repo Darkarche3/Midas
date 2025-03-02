@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { PrecisionContext } from '../../Contexts/PrecisionContext'; // Import the context
 import { db, auth } from '../../config/firebase.js'; // Import Firestore and Auth
-import { collection,doc, getDoc, getDocs } from 'firebase/firestore'; // Import Firestore functions
-import { onAuthStateChanged } from 'firebase/auth'; // Import onAuthStateChanged
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore'; // Import Firestore functions
+import { onAuthStateChanged, signOut } from 'firebase/auth'; // Import onAuthStateChanged and signOut
 import "./homePage.scss";
 
 const HomePage = () => {
@@ -10,7 +10,6 @@ const HomePage = () => {
   const [progress, setProgress] = useState(0); // Initialize progress as 0
   const [transactions, setTransactions] = useState([]); // Store transaction data
   const [prediction, setPrediction] = useState(0); // Store prediction value from the users collection
-
 
   // Fetch transactions from Firestore
   useEffect(() => {
@@ -51,9 +50,13 @@ const HomePage = () => {
     if (prediction > 0) {
       const newProgress = ((prediction - totalAmount) / prediction) * 100; // Calculate progress with (b - a) / b formula
       setProgress(newProgress); // Set the calculated progress
+
+      if (newProgress <= 0) {
+        alert("Error: Progress is less than or equal to 0.");
+      }
     }
   }, [transactions, prediction]); // Recalculate progress when transactions or prediction changes
-
+  
   // Update progress bar color based on the progress value
   useEffect(() => {
     const fetchAmountLocked = async (user) => {
@@ -87,8 +90,19 @@ const HomePage = () => {
     return () => unsubscribe(); // Cleanup the observer on unmount
   }, [progress, setAmountLocked]);
 
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      // Redirect to login page or any other page after logout
+      window.location.href = '/login';
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
+
   return (
-    <div className="app-container">
+    <div className="app-container">    
+      <button className="logout-button" onClick={handleLogout}>Logout</button>
       <div className="app-header">
         <h1 className="app-title">MIDAS</h1>
       </div>

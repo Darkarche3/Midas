@@ -25,14 +25,31 @@ body,
 
 .app-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
   width: 100%;
+  padding: 0 20px; /* Add padding to the sides */
 }
 
 .app-title {
   text-align: center;
   flex-grow: 1;
   font-size: 3em; /* Increased font size */
+}
+
+.logout-button {
+  background-color: #002D70;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px; /* Reduced padding to make the button shorter horizontally */
+  font-size: 1em;
+  cursor: pointer;
+  position: absolute;
+  top: 20px; /* Position at the top */
+  right: 20px; /* Position at the right */
+  display: inline-block; /* Prevent stretching */
+  width: auto; /* Ensure the button does not stretch */
 }
 
 .app-bar-container {
@@ -79,7 +96,7 @@ body,
   display: block;
   margin: 20px auto;
   padding: 15px 30px;
-  background-color: #007bff;
+  background-color: #002D70;
   color: white;
   border: none;
   border-radius: 5px;
