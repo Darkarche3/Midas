@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './homePage.scss';
 
 const HomePage = () => {
-  const [progress, setProgress] = useState(50); // Example initial value
+  const [progress] = useState(50); // Example initial value
 
   useEffect(() => {
     const progressBar = document.querySelector('.app-progress-bar');
