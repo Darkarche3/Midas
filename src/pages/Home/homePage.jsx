@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./homePage.scss";
+import {Link } from "react-router-dom";
 
 const HomePage = () => {
   const [progress] = useState(50); // Example initial value
-  
 
   useEffect(() => {
     const progressBar = document.querySelector(".app-progress-bar");
@@ -75,11 +75,9 @@ const HomePage = () => {
           </table>
         </div>
       </div>
-      <div className="fire-container">
-        <span role="img" aria-label="fire" className="app-fire-bottom">
-          🔥
-        </span>
-      </div>
+      <Link to="/signup">
+        <button>Signup</button>
+      </Link>
     </div>
   );
 };
