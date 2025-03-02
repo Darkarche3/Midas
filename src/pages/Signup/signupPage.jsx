@@ -37,7 +37,7 @@ const Signup = () => {
       });
 
       console.log("User registered and data stored:", formData);
-      navigate("/home");
+      navigate("/form");
     } catch (error) {
       console.error("Error registering user:", error);
     }

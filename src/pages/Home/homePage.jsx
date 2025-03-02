@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./homePage.scss";
-import {Link } from "react-router-dom";
 
 const HomePage = () => {
   const [progress] = useState(50); // Example initial value
@@ -75,9 +74,6 @@ const HomePage = () => {
           </table>
         </div>
       </div>
-      <Link to="/signup">
-        <button>Signup</button>
-      </Link>
     </div>
   );
 };
